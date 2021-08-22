@@ -75,3 +75,57 @@ You can test the package with other options, such as using dynamic linking as su
 ```
 $ conan test test_package demo/0.1 -o hello:shared=True
 ```
+
+
+## View the installed binary packages.
+You can see the installed binary packages for this reference.
+```
+$ conan search hello/0.1@
+Existing packages for recipe hello/0.1:
+
+    Package_ID: b911f48570f9bb2902d9e83b2b9ebf9d376c8c56
+        [options]
+            fPIC: True
+            shared: False
+        [settings]
+            arch: x86_64
+            build_type: Release
+            compiler: gcc
+            compiler.libcxx: libstdc++11
+            compiler.version: 9
+            os: Linux
+        Outdated from recipe: False
+
+
+
+```
+
+In this case, you see that we have only one binary package for this reference, which has the settings x86_64, Release, gcc, etc.
+
+## Build the package with different configuration
+We can also build the package with different settings and produce another binary package. Let's run `conan install --build` with the clang profile.
+
+```
+$ conan install hello/0.1@ --build -pr clang
+```
+
+If we now run `conan search` we'll get:
+
+```
+Package_ID: 66a6f7f469b857b2375b756c6b63014aab71b2dd
+        [options]
+            fPIC: True
+            shared: False
+        [settings]
+            arch: x86_64
+            compiler: clang
+            compiler.version: 10
+            os: Linux
+        Outdated from recipe: False
+
+Package_ID: b911f48570f9bb2902d9e83b2b9ebf9d376c8c56
+        [options]
+            fPIC: True
+            shared: False
+
+```

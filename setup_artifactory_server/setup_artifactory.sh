@@ -1,6 +1,6 @@
 JFROG_HOME=$PWD
 
-if [ ! -d $JFROM_HOME/var/artifactory/etc ]; then
+if [ ! -d $JFROG_HOME/var/artifactory/etc ]; then
 	mkdir -p $JFROG_HOME/var/artifactory/etc
 	cd $JFROG_HOME/var/artifactory/etc/
 	touch ./system.yaml

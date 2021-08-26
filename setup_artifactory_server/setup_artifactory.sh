@@ -1,12 +1,11 @@
-JFROG_HOME=$PWD
 
-if [ ! -d $JFROG_HOME/var/artifactory/etc ]; then
-	mkdir -p $JFROG_HOME/var/artifactory/etc
-	cd $JFROG_HOME/var/artifactory/etc/
+JFROG_HOME=$PWD
+if [ ! -d $JFROG_HOME ]; then
+	mkdir -p $JFROG_HOME/artifactory/var/etc/
+	cd $JFROG_HOME/artifactory/var/etc/
 	touch ./system.yaml
-	sudo chown -R 1030:1030 $JFROG_HOME/var/artifactory
+	chown -R $UID $JFROG_HOME/artifactory/var
+	chmod -R 777 $JFROG_HOME/artifactory/var
 fi
 
-
-# run the container
-docker run --name artifactory --rm -d  -v $JFROG_HOME/var/artifactory/:/var/opt/jfrog/artifactory  -p 8081:8081 -p 8082:8082 docker.bintray.io/jfrog/artifactory-cpp-ce:latest
+docker run --name artifactory -v $JFROG_HOME/artifactory/var/:/var/opt/jfrog/artifactory -d -p 8081:8081 -p 8082:8082 releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:latest

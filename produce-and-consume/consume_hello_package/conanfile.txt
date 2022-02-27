@@ -1,0 +1,7 @@
+
+[requires]
+hello/0.1
+
+[generators]
+cmake
+qmake

@@ -28,7 +28,7 @@ which will set up our Artifactory instance as a remote. Run this script in both
 containers.
 
 
-## Proucing and consuming
+## Producing and consuming
 ---
 
 ### Producer

@@ -7,7 +7,7 @@ conan new hello/0.1
 conan export .
 
 # build a binary package with the default profile
-conan install --build=hello hello/0.1@
+conan install hello/0.1@ --build
 
 # upload the package recipe along with the binaries to artifactory
 conan upload -r artifactory --all hello/0.1@

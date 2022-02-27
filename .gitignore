@@ -1,4 +1,4 @@
-
+artifactory/
 build/
 *.so*
 *.out

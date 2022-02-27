@@ -4,20 +4,22 @@ services:
        tty: true
        command: ["cat"]
        container_name: producer
-       image: conan:1.0
+       build:
+         context: infrastructure/conan-docker
        volumes:
        - type: bind
-         source: ./create_hello_package
-         target: /project
+         source: ./produce
+         target: /home/conan/projects
     consumer:
        tty: true
        command: ["cat"]
        container_name: consumer
-       image: conan:1.0
+       build:
+         context: infrastructure/conan-docker
        volumes:
        - type: bind
-         source: ./consume_hello_package
-         target: /project
+         source: ./consume
+         target: /home/conan/projects
     artifactory:
         container_name: artifactory
         image: releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:latest

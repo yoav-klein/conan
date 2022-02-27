@@ -35,7 +35,7 @@ containers.
 First, we use the `producer` container to upload the `hello/0.1` package to Artifactory:
 
 ```
-$ docker exec producer -w /project /project/create-hello-package.sh
+$ docker exec -w /project producer /project/create-hello-package.sh
 ```
 
 This will create the `hello/0.1` demo package, build it, and upload to Artifactory.
@@ -44,5 +44,5 @@ This will create the `hello/0.1` demo package, build it, and upload to Artifacto
 Now, we have a small consumer project that consumes the `hello/0.1` package.
 
 ```
-$ docker exec consumer -w /project /project/build.sh
+$ docker exec -w /project consumer /project/build.sh
 ```

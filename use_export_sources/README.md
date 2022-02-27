@@ -1,5 +1,5 @@
 
-# Sources and Recipe in Same Reopsitory
+# Sources and Recipe in Same Repository
 
 In the `create_hello_package` example, we've used sources from git. This is a typical use-case when you want to pack third-party libraries.
 

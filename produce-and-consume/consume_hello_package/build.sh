@@ -5,6 +5,9 @@ RESET="\e[0m"
 
 set -e
 
+if [ -d build ]; then
+    rm -rf build
+fi
 mkdir build && cd build
 
 echo -e "${GREEN}=== Installing hello/0.1 package${RESET}"

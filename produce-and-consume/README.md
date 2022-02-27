@@ -32,5 +32,17 @@ containers.
 ---
 
 ### Producer
-First, we use the `producer` container to upload the `hello/0.1` package to Artifactory.
+First, we use the `producer` container to upload the `hello/0.1` package to Artifactory:
 
+```
+$ docker exec producer -w /project /project/create-hello-package.sh
+```
+
+This will create the `hello/0.1` demo package, build it, and upload to Artifactory.
+
+### Consumer
+Now, we have a small consumer project that consumes the `hello/0.1` package.
+
+```
+$ docker exec consumer -w /project /project/build.sh
+```

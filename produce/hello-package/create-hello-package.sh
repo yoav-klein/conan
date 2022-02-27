@@ -6,8 +6,5 @@ conan new hello/0.1
 # export the package recipe to the local cache
 conan export .
 
-# build a binary package with the default profile
-conan install hello/0.1@ --build
-
-# upload the package recipe along with the binaries to artifactory
-conan upload -r artifactory --all hello/0.1@
+# upload the package recipe to Artifactory
+conan upload -r artifactory hello/0.1@

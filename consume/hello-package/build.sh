@@ -12,7 +12,7 @@ mkdir build && cd build
 
 echo -e "${GREEN}=== Installing hello/0.1 package${RESET}"
 # install the hello/0.1 package
-conan install ..
+conan install .. --build
 
 echo -e "${GREEN}=== Running CMake${RESET}"
 cmake ..

@@ -8,5 +8,10 @@ if [ ! -d $JFROG_HOME/artifactory ]; then
 	chmod -R 777 $JFROG_HOME/artifactory/var
 fi
 
+exists=$(docker container ls -a --filter name=artifactory -q)
+if [ $exists ]; then
+	docker container rm artifactory
+fi	
+
 docker run --name artifactory -v $JFROG_HOME/artifactory/var/:/var/opt/jfrog/artifactory \
 -d -p 8081:8081 -p 8082:8082 releases-docker.jfrog.io/jfrog/artifactory-cpp-ce:latest

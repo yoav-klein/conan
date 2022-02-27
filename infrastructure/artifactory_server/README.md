@@ -11,6 +11,8 @@ from one run to another.
 
 The server listends on port 8081 for REST API, and 8082 for GUI.
 
+The initial user and password are: `admin` `password`
+
 NOTE: In the _Custom Base URL_ setting, just leave it blank.
 
 ## Setup a Repository

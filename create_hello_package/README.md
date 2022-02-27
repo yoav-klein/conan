@@ -26,7 +26,7 @@ Now we have the following structure:
 
 ```
 
-The `conanfile.txt` is what defines our package. You can see it defines methods for retrieving the source, building and packaging.
+The `conanfile.py` is what defines our package. You can see it defines methods for retrieving the source, building and packaging.
 
 2. Create the package. <br>
 
